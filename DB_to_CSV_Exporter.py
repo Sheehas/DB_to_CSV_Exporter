@@ -5,7 +5,7 @@ import csv
 db_files = [file for file in os.listdir() if file.endswith(".db")]
 total_files = len(db_files)
 
-print(f"Процесс конвертации: 0/{total_files} файлов (00.00% завершено)")
+print(f"Conversion process: 0/{total_files} files (00.00% complete)")
 
 for index, db_file in enumerate(db_files, start=1):
     connection = sqlite3.connect(db_file)
@@ -36,6 +36,6 @@ for index, db_file in enumerate(db_files, start=1):
     connection.close()
 
     progress = (index / total_files) * 100
-    print(f"Процесс конвертации: {index}/{total_files} файлов ({progress:.2f}% завершено)")
+    print(f"Conversion process: {index}/{total_files} files ({progress:.2f}% complete)")
 
-print("Конвертация завершена.")
+print("Conversion completed.")
